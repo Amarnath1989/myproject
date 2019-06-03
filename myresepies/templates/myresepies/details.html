@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style>
+    body {color:black;
+           background-color : pink}
+    h1,h3{color : blue}
+
+</style>
+
+<div align="right">
+     <h4 align="right"><a class="btn btn-primary " href="/index" role="button">Go To IndexPage</a>
+    <a  class="btn btn-primary " href="/logout" role="button">Logout</a></h4>
+</div>
+
+    {%if resipies_list%}
+        <h1 align = center>{{resipies_list.name.upper}}<br></h1>
+        <h3>Ingredeants:</h3><br>{{resipies_list.ingredients}}<br>
+        <h3>Process</h3>{{resipies_list.process}}<br>
+        <h3>Image<br></h3>
+        <img src="{{resipies_list.image}}", alt="Image Missed"><br><br>
+        <h3>Created BY:</h3>{{resipies_list.created_by.upper}}
+        <h3>Created Date:</h3>{{resipies_list.created_date}}
+        <h3>Modified Date:</h3>{{resipies_list.updated_date}}
+    {%else%}
+        <h1 color = red>No Resepi is available</h1>
+    {%endif%}
+
+    <h4 align="right"><a class="btn btn-primary " href="http://localhost:8000/" role="button">Go To IndexPage</a></h4>

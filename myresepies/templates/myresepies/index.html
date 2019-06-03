@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+    body {color:blue;
+          background-color: #05ffb0;}
+     h2 { color:black}
+
+</style>
+<div align="Center"><h2 color="white">RESEPIES LIST</h2></div>
+<div class='jumbotron'>
+    <div class='container'>
+        {%if resepies_list%}
+        <table style="width:100%">
+            <thead>
+                <th>Resepi ID</th>
+                <th>Resepi Name</th>
+                <th>Created By</th>
+                <th> Action</th>
+            </thead>
+            {%for resepi in resepies_list%}
+            <tr>
+                <td>{{resepi.id}}</td>
+                <td><a class="btn btn-link" href="/detail/{{resepi.id}}"><h3>{{resepi.name.upper}}</h3></a></td>
+                <td>{{resepi.created_by.upper}}</td>
+                <td><a class='btn btn-danger btn-xs' href="/delete/{{resepi.id}}">Delete</a></td>
+            </tr>
+            {%endfor%}
+        </table><br>
+        {% endif%}
+        <div align="right">
+            <a class="btn btn-primary " href="/create" role="button">Create Resepi</a>
+            <a class="btn btn-primary " href="/logout" role="button">Logout</a>
+        </div>
+    </div>
+
+</div>

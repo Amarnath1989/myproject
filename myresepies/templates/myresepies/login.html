@@ -1,0 +1,43 @@
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+    body {color:blue;
+           background-color : pink}
+</style>
+  <body>
+    <div <div class="jumbotron">>
+        <div class ='container'>
+ 
+        <h3 align="center", color = 'red'>Login Form</h3>
+ 
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
+             <form action="" method="post">
+                {% csrf_token %}
+                <h5 align="center"> If you are not registered yet please sign up by clicking Register button</h5><hr>
+                <table align = center>
+                    <tr>
+                        <td><label for="id_username">Enter username</label></td>
+                        <td><input type="text" id="id_username" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="id_username">Enter password</label></td>
+                        <td><input type="password" id="id_password" name="password"></td>
+                    </tr>
+                </table><br>
+                 <div align="center">
+                   <input type="submit" class = 'btn btn-primary btn-lg' value="login">
+                   <a class="btn btn-primary btn-lg " href="/register" role="button">Register</a>
+               </div>
+
+             </form>
+        </div>
+    </div>
+  </body>
+ 
